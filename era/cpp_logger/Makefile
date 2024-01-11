@@ -51,7 +51,10 @@ clean:
 	rm -f *.o
 	rm -f *.a
 	rm -f *.run
+	rm -f ezlog
+	rm -f .ezlog
+	rm -f ezlog.exe
 	rm -f *.out
 	rm -f *.log
 	chmod 666 *.?pp
-
+	
