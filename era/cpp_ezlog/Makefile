@@ -9,6 +9,10 @@ opts = -std=c++14 -I$(hpp)
 
 all: ezlog.run tezlog.run 
 
+posix: ezlog
+
+windows: ezlog.exe
+
 # ::::: Target: tezlog.run ::::: 
 tezlog.run: tezlog.o libera.a
 	$(cpp) $(opts) -o tezlog.run tezlog.o -L$(lib) -lera
@@ -17,6 +21,12 @@ tezlog.run: tezlog.o libera.a
 ezlog.run: ezcon.o libera.a
 	$(cpp) $(opts) -o ezlog.run ezcon.o -L$(lib) -lera
 	exec "./ezlog.run"
+
+ezlog: ezcon.o libera.a
+	$(cpp) $(opts) -o ezlog ezcon.o -L$(lib) -lera
+
+ezlog.exe: ezcon.o libera.a
+	$(cpp) $(opts) -o ezlog.exe ezcon.o -L$(lib) -lera
 
 tezlog.o: $(ezlog)tezlog.cpp
 	$(cpp) $(opts) -c $(ezlog)tezlog.cpp
@@ -37,6 +47,9 @@ clean:
 	rm -f *.o
 	rm -f *.a
 	rm -f *.run
+	rm -f ezlog
+	rm -f .ezlog
+	rm -f ezlog.exe
 	rm -f *.out
 	rm -f *.log
 	chmod 666 *.?pp

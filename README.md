@@ -13,6 +13,15 @@ Since as GitHub has evolved, I updated ezlog to the C/C++ 2014 Standard to [earn
 
 Moving forward & cloned today from that [era Namespace](https://github.com/soft9000/era), the future of the 30 year ezlog command-line interface will be evolving at this location.
 
+# Mission
+Evolving across the decades, as ever the mission of **ezlog** remains to:
+
+(1) Allow us to use any **C**ommand **L**ine User **I**nterface (**CLI**) to maintain our events & messages in readily editable text files.
+
+(2) Permit us to work on those files between that **CLI** and a cross-platform **G**raphical **U**ser **I**nterface (**GUI**.)
+
+(3) Do other [creative things](http://soft9000.com) whilst I am in between [consulting 'gigs](https://linkedin.com/in/nagyspace).
+
 Happy logging!
 
 -- Randall

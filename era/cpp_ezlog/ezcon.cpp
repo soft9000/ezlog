@@ -20,7 +20,7 @@ int main(int argc, char** argv) {
       ssrm << " ";
     ssrm << argv[ss];
   }
-  LogWriter writer(File("./.ezlog.log"));
+  LogWriter writer(File("./.ezlog"));
   if (writer.append(ssrm.str()) == false) {
     cerr << "Error: Unable to write \"" << argv[0] << "\"" << ends;
   } else {
