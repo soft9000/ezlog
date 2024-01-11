@@ -8,6 +8,11 @@ opts = -std=c++14 -I$(hpp)
 
 all: ezlog.run tlogwriter.run 
 
+
+posix: ezlog
+
+windows: ezlog.exe
+
 # ::::: Target: tlogwriter.run ::::: 
 tlogwriter.run: tlogwriter.o libera.a
 	$(cpp) $(opts) -o tlogwriter.run tlogwriter.o -L$(lib) -lera
@@ -17,9 +22,15 @@ ezlog.run: logcon.o libera.a
 	$(cpp) $(opts) -o ezlog.run logcon.o -L$(lib) -lera
 	exec "./ezlog.run"
 
+# Use "logger.log" file in POSIX:
 ezlog: logcon.o libera.a
 	$(cpp) $(opts) -o ezlog logcon.o -L$(lib) -lera
 	ls -al ezlog
+
+# Use "logger.log" file on Microsoft's Windows:
+ezlog.exe: logcon.o libera.a
+	$(cpp) $(opts) -o ezlog.exe logcon.o -L$(lib) -lera
+	ls -al ezlog.exe
 
 tlogwriter.o: $(logger)tlogwriter.cpp
 	$(cpp) $(opts) -c $(logger)tlogwriter.cpp

@@ -22,9 +22,11 @@ ezlog.run: ezcon.o libera.a
 	$(cpp) $(opts) -o ezlog.run ezcon.o -L$(lib) -lera
 	exec "./ezlog.run"
 
+# Use zClassic ".ezlog" file in POSIX:
 ezlog: ezcon.o libera.a
 	$(cpp) $(opts) -o ezlog ezcon.o -L$(lib) -lera
 
+# Use zClassic ".ezlog" file on Microsoft's Windows:
 ezlog.exe: ezcon.o libera.a
 	$(cpp) $(opts) -o ezlog.exe ezcon.o -L$(lib) -lera
 
